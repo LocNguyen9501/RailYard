@@ -1,1 +1,6 @@
-# RailYard
+# RailYardSorting
+Sorting train cars is quite challenging because there are a fixed number of parallel tracks in a trainyard. (Also, each track has a fixed length, but we will ignore that issue in this homework.) In this homework you will implement a railyard simulation and you will run different algorithms for sorting the cars of an incoming train. 
+
+Cycle Sort: When the train enters the classification yard, the first car is placed on the first track. For each following car, if the car is greater than or equal to the car that preceded it in the train, it is placed on the same track as the preceding car. If the car is smaller than the preceding car, it is placed on the next track of the classification yard, if there is a next track, and the first track if the preceding car was placed on the last track of the classification yard.
+
+Closest Sort: To determine the track to place a car, we examine the cars at the back of each track. We chose the track whose back-most car is the largest car that is less than or equal to the car being placed. If there is no such track, the car is placed on an empty track, if one exists, or onto the track for which the back car has the smallest value. For example, if the back cars on the four tracks are 5, 9, 3, 7 and we are placing car 6, it is placed on the same track as 5 because that is the largest back car smaller than 6. On the other hand, if we are placing 2 we place it after 3 (assuming there are no empty tracks) because that is the track with the smallest back car.
